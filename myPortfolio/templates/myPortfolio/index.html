@@ -1,0 +1,296 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+    src="https://kit.fontawesome.com/93aac082d0.js"
+    crossorigin="anonymous"
+  ></script>
+    <link rel="stylesheet" href="{% static 'myPortfolio/style.css' %}">
+    <link rel="shortcut icon" href="cereal.png" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'images\cereal.png' %}" type="web icon">
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- animate.css -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+</head>
+<body>
+    <header>
+   
+        
+        <nav>
+            <ul>
+                <li><a href="" id="logo">KrixCode</a></li>
+            </ul>
+            
+            <ul id="link">
+                <!-- <img src="home.png" alt=""> -->
+                <li id="same"><a href="#hero" id="home"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li id="same"><a href="#about" id="home"><i class="fa-solid fa-suitcase"></i> About me </a></li>
+                <li id="same"><a href="#services" id="home"><i class="fa-solid fa-headset"></i> Services </a></li>
+                <li id="same"><a href="#contact" id="home"><i class="fa-solid fa-envelope"></i> Contact </a></li>
+            </ul>
+
+            <ul id="ul">
+                <div class="hamburger" id="hamburger" onclick="drop()">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </ul>
+
+            <ul id="cancel">
+                <li> <a href=""><i class="fa-solid fa-xmark"></i></a> </li>
+            </ul>
+        </nav>
+</header>
+
+    <div id="hero">
+        <div class="content">
+            <div class="same intro animate__animated animate__fadeInRight">
+                <img src="{% static 'images\getty.jpg' %}" alt="" id="myImage">
+            </div>
+            <div class="same des animate__animated animate__fadeInLeft">
+               <h1>Hi, my name is
+                <span>Christabel</span>
+                <span><p id="web">Web Developer</p></span>
+                <a href="https://github.com/Krixnor"><i class="fa-brands fa-github"></i></a>
+                <!-- <img src="github-logo.png" alt="" style="width: 1.5rem;"> -->
+                <a href="https://web.facebook.com/christabel.udodor"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://twitter.com/krixnor"><i class="fa-brands fa-twitter"></i></a>
+                
+               </h1>
+               
+            </div>
+        </div>
+        
+    </div>
+
+    <div id="about" class = "animate__animated animate__fadeInUp">
+            <h2>ABOUT ME</h2>
+            <!-- <nav>
+                <ul>
+                    <li><a href="">Education</a></li>
+                    <li><a href="">Skills</a></li>
+                    <li><a href="">Portfolio</a></li>
+                </ul>
+            </nav> -->
+            <div class="content">
+            <div>
+                <img src="{% static 'images\getty2.jpg' %}" alt="" style="max-width: 100%;">
+            </div>
+            <div id="infos">
+                <div class="one" id="step1">
+                    <img src="{% static 'images\mortarboard.png' %}" alt="">
+                    <h3>Education</h3>
+                        <!-- <p class="write">  -->
+                        <ul>
+                            <li>
+                               <b> NECO/SSCE - </b> Acquired a Senior Secondary School Certificate
+                            </li>
+                            <li>
+                            <b>Bsc Statistics - </b>Graduated from the Federal University of Benin, Edo State Nigeria
+                            </li>
+                            <li>
+                            <b>Sololearn -</b> Acquired certificate from multiple courses
+                            </li>
+                            <li>
+                            <b>Alx Africa - </b> A student of alx software engineering cohort
+                            </li>
+                        </ul>
+                    <!-- </p> -->
+                    
+                     <div class="button">
+                        
+                        <button onclick="nextStep()">Next</button>
+                     </div>
+                  
+                     </div>
+                <div class="one" id="step2">
+                    <h3>Skills</h3>
+                  
+                        <div class="write" id="container">
+                           
+                                <div class="box">
+                                    <img src="{% static 'images\html-file-with-code-symbol.png' %}" alt="">
+                                    <b>HTML</b>
+                                </div>
+                                <div class="box">
+                                    <img src="{% static 'images\css-file-format-with-brackets.png' %}" alt="">
+                                    <b>CSS</b>
+                                </div>
+                                <div class="box">
+                                    <img src="{% static 'images\bootstrap.png' %}" alt="">
+                                    <b>Bootstrap</b>
+                                </div>
+                                <div class="box">
+                                    <img src="{% static 'images\javascript-file.png' %}" alt="">
+                                    <b>JavaScript</b>
+                                </div>
+                                <div class="box">
+                                    <img src="{% static 'images\python-file-symbol.png' %}" alt="">
+                                    <b>Python</b>
+                                </div>
+                                <div class="box">
+                                    <img src="{% static 'images\django.png' %}" alt="">
+                                    <b>Django</b>
+                                </div>
+                                <div class="box">
+                                    <img src="{% static 'images\sql-server.png' %}" alt="">
+                                    <b>SQL</b>
+                                </div>
+                                <div class="box">
+                                    <img src="{% static 'images\git.png' %}" alt="">
+                                    <b>GIT</b>
+                                </div>
+                                <div class="box">
+                                    <img src="{% static 'images\github-logo.png' %}" alt="">
+                                    <b>GitHub</b>
+                                </div>
+                           
+                            
+                        </div>
+                     <div class="button">
+                        <button onclick="prevStep()">Previous</button>
+                        <button onclick="nextStep()">Next</button>
+                     </div>
+                  
+                   
+                    </div>
+                <div class="one" id="step3">
+                    <img src="{% static 'images\project-management.png' %}" alt="">
+                    <h3>Portfolio</h3>
+                   
+                    <div class="write">
+                    <div class="box">
+                        <img src="{% static 'images\github-logo.png' %}" alt="">
+                        <p>admin library application</p>
+                    </div>
+                    <div class="box">
+                        <img src="{% static 'images\github-logo.png' %}" alt="">
+                        <p>Food Resturant Website</p>
+                    </div>
+                </div>
+                    <div class="button">
+                        <button onclick="prevStep()">Previous</button>
+                     </div>
+                   
+
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="services" class = "animate__animated animate__fadeInUp">
+        <h2>SERVICES</h2>
+        <div class="content">
+            <!-- <h2>SERVICES</h2> -->
+            <div id="infos">
+                <div class="two">
+                    <i class="fa-solid fa-globe"></i>
+                    <h3>Web Development</h3>
+                    <p>Crafting dynamic and user-friendly websites tailored to your unique needs, bringing your digital vision to life.</p></div>
+                <div class="two">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>Data Analysis</h3>
+                <p> Unlocking insights from your data to drive informed decision-making, 
+                    utilizing advanced analytical techniques to extract meaningful patterns and trends.
+                    </p></div>
+                <div class="two">
+                    <i class="fa-solid fa-pen-nib"></i>
+                    <h3>Graphics Designing</h3>
+                <p>Transforming ideas into visually captivating designs that resonate with your audience, 
+                    combining creativity and precision to deliver stunning visual solutions.</p>
+                </div>
+                <div class="two">
+                    <i class="fa-solid fa-person-chalkboard"></i>
+                    <h3>Tutoring</h3>
+                <p> Empowering learners to reach their full potential through personalized guidance and support, 
+                    fostering a deep understanding of complex subjects in an engaging and effective manner. </p></div>
+            </div>
+        </div>
+    </div>
+    <div id="contact" class = "animate__animated animate__fadeInUp">
+        <h2>LET'S TALK</h2>
+        <div class="content">
+            <!-- <h2>LET'S TALK</h2> -->
+            <div class="container">
+                <div>
+                    <img src="{% static 'images\contact.png' %}" alt="" style="max-width: 100%; ">
+                </div>
+                <div id="form">
+                    <form action="{% url 'send_message' %}" method="post">
+                        {% csrf_token %}
+                        {{ form.email }}
+                        {{ form.message }}
+                        <button type="submit">Send</button>
+                    </form>
+                    <!-- <div id="button">
+                        <button type="submit">Send Message</button>
+                    </div> -->
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <!-- footer -->
+    <div id="footer">
+        <small>Designed by &copy;KrixCode</small>
+    </div>
+
+    <script>
+        let currentStep = 1
+        function nextStep(){
+            if (currentStep < 3){
+                currentStep++
+                updateStep()
+            }
+        }
+
+        function prevStep(){
+            if (currentStep > 1){
+                currentStep--
+                updateStep()
+            }
+        }
+
+        function updateStep(){
+            let divs = document.querySelectorAll('.one')
+            divs.forEach(div =>{
+                div.style.display = 'none'
+            })
+            document.querySelector(`#step${currentStep}`).style.display = 'flex';
+            document.querySelector(`#step${currentStep}`).style.width = '100%';
+        }
+
+        function drop(){
+            const ham = document.querySelector('#hamburger')
+            const links = document.querySelector('#link')
+            const nav = document.querySelector('nav')
+            const can = document.querySelector('#cancel')
+            const ul = document.querySelector('#ul')
+            ham.style.display = 'none';
+            links.style.display = 'block';
+            links.style.gap = '50px';
+            nav.style.display = 'block';
+            nav.style.textAlign = 'center';
+            can.style.display = 'block'
+
+            can.addEventListener('click', () =>{
+                nav.style.display = 'none';
+                ham.style.display = 'none';
+            })
+        }
+    </script>
+</body>
+</html>
