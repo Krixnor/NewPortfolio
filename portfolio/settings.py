@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-p4=p!213yjko#s%(_r=)(kli%p5_n+dg1g^k#o0)jr=$446^n)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://krixcode-portfolio.vercel.app/']
 
 
 # Application definition
