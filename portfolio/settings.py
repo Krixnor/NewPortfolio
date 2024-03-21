@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-p4=p!213yjko#s%(_r=)(kli%p5_n+dg1g^k#o0)jr=$446^n)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://krixcode-portfolio.vercel.app/']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -127,15 +127,30 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
-# EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'a755c3f345d7fd'
-# EMAIL_HOST_USER = 'udodorchristabel@gmail.com'
-EMAIL_HOST_PASSWORD = '3c37b4eae54597'
-# EMAIL_HOST_PASSWORD = 'ygitirvwaacafblh'
-EMAIL_PORT = '2525'
-# EMAIL_PORT = '587'
-# EMAIL_USE_TLS = True
+
+EMAIL_HOST = 'smtp.gmail.com'
+
+EMAIL_HOST_USER = 'udodorchristabel@gmail.com'
+
+# EMAIL_HOST_USER = 'udodorgrace@gmail.com'
+
+# EMAIL_HOST_PASSWORD = 'more1965'
+
+EMAIL_HOST_PASSWORD = 'ygitirvwaacafblh'
+
+EMAIL_PORT = '587'
+
+# EMAIL_USE_SSL = True
+
+
+
+
+# EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+# EMAIL_HOST_USER = 'a755c3f345d7fd'
+# EMAIL_HOST_PASSWORD = '3c37b4eae54597'
+# EMAIL_PORT = '2525'
+EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = True
 
 # ACCOUNT_USER_MODEL_EMAIL_FIELD= 'email'
 # ACCOUNT_UNIQUE_EMAIL = True
