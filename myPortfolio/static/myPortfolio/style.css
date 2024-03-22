@@ -111,7 +111,7 @@ span #web{
 #hero .content{
    display: flex;
    justify-content: space-around;
-   /* height: 70vh; */
+   height: 100dvh ;
    padding: 15px;
    /* margin-bottom: 20px; */
 }
@@ -258,6 +258,14 @@ h2{
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+}
+
+#step1 .box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* gap: 0.5rem; */
 }
 
 #about button{
