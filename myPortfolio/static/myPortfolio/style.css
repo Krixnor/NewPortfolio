@@ -111,7 +111,7 @@ span #web{
 #hero .content{
    display: flex;
    justify-content: space-around;
-   height: 100dvh ;
+   /* height: 100dvh ; */
    padding: 15px;
    /* margin-bottom: 20px; */
 }
