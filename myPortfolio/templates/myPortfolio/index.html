@@ -58,7 +58,7 @@
             <div class="same intro animate__animated animate__fadeInRight">
                 <img loading="lazy" src="{% static 'images\getty.jpg' %}" alt="" id="myImage">
             </div>
-            <div class="same des animate__animated animate__fadeInLeft">
+            <div class="des animate__animated animate__fadeInLeft">
                <h1>Hi, my name is
                 <span>Christabel</span>
                 <span><p id="web">Web Developer</p></span>
@@ -91,71 +91,33 @@
                 <div class="one" id="step1">
                     <img src="{% static 'images\mortarboard.png' %}" alt="">
                     <h3>Education</h3>
-                        <!-- <p class="write">  -->
+                       {% for edu in education %}
                         <ul>
                             <li>
-                               <b> NECO/SSCE - </b> Acquired a Senior Secondary School Certificate
-                            </li>
-                            <li>
-                            <b>Bsc Statistics - </b>Graduated from the Federal University of Benin, Edo State Nigeria
-                            </li>
-                            <li>
-                            <b>Sololearn -</b> Acquired certificate from multiple courses
-                            </li>
-                            <li>
-                            <b>Alx Africa - </b> A student of alx software engineering cohort
+                               <b> {{ edu.education }} - </b> {{ edu.description }}
                             </li>
                         </ul>
-                    <!-- </p> -->
-                    
+                     {% endfor %}
+
                      <div class="button">
                         
                         <button onclick="nextStep()">Next</button>
                      </div>
-                  
-                     </div>
+
+                    </div>
                 <div class="one" id="step2">
                     <h3>Skills</h3>
                   
                         <div class="write" id="container">
+
+                            {% for skill in skills %}
                            
                                 <div class="box">
-                                    <img src="{% static 'images\html-file-with-code-symbol.png' %}" alt="">
-                                    <b>HTML</b>
+                                    <img src="{{ skill.img.url }}" alt="">
+                                    <b>{{ skill.lang }}</b>
                                 </div>
-                                <div class="box">
-                                    <img src="{% static 'images\css-file-format-with-brackets.png' %}" alt="">
-                                    <b>CSS</b>
-                                </div>
-                                <div class="box">
-                                    <img src="{% static 'images\bootstrap.png' %}" alt="">
-                                    <b>Bootstrap</b>
-                                </div>
-                                <div class="box">
-                                    <img src="{% static 'images\javascript-file.png' %}" alt="">
-                                    <b>JavaScript</b>
-                                </div>
-                                <div class="box">
-                                    <img src="{% static 'images\python-file-symbol.png' %}" alt="">
-                                    <b>Python</b>
-                                </div>
-                                <div class="box">
-                                    <img src="{% static 'images\django.png' %}" alt="">
-                                    <b>Django</b>
-                                </div>
-                                <div class="box">
-                                    <img src="{% static 'images\sql-server.png' %}" alt="">
-                                    <b>SQL</b>
-                                </div>
-                                <div class="box">
-                                    <img src="{% static 'images\git.png' %}" alt="">
-                                    <b>GIT</b>
-                                </div>
-                                <div class="box">
-                                    <img src="{% static 'images\github-logo.png' %}" alt="">
-                                    <b>GitHub</b>
-                                </div>
-                           
+                            
+                            {% endfor %}
                             
                         </div>
                      <div class="button">
@@ -276,15 +238,22 @@
         function drop(){
             const ham = document.querySelector('#hamburger')
             const links = document.querySelector('#link')
+            
             const nav = document.querySelector('nav')
             const can = document.querySelector('#cancel')
             const ul = document.querySelector('#ul')
+            const li = document.querySelectorAll('#same')
             ham.style.display = 'none';
             links.style.display = 'block';
-            links.style.gap = '50px';
             nav.style.display = 'block';
             nav.style.textAlign = 'center';
             can.style.display = 'block'
+
+            li.forEach(link =>{
+                link.style.marginTop = '1rem';
+                console.log(link)
+            })
+            
 
             can.addEventListener('click', () =>{
                 nav.style.display = 'none';

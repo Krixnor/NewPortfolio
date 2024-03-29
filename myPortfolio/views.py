@@ -2,14 +2,23 @@ from django.shortcuts import render, redirect
 from .forms import MessageForm
 from django.core.mail import send_mail, EmailMessage
 from django.conf import settings
+from .models import Education,Skills,Service,Porfolio
 
 # Create your views here.
 
 
 def port(request):
+    education = Education.objects.all()
+    skills = Skills.objects.all()
+    services = Service.objects.all()
+    projects = Porfolio.objects.all()
     form = MessageForm()
     return render(request, 'myPortfolio/index.html',{
-        'form':form
+        'form':form,
+        'education': education,
+        'skills':skills,
+        'services':services,
+        'projects':projects
     })
     pass
 
