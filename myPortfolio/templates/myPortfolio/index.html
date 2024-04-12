@@ -26,7 +26,6 @@
 </head>
 <body>
     <header>
-   
         
         <nav>
             <ul>
@@ -53,6 +52,12 @@
         </nav>
 </header>
 
+        {% if message %}
+        {% for message in messages %}
+
+        {% endfor %}
+        <div>{{ message }}</div>
+        {% endif %}
     <div id="hero">
         <div class="content">
             <div class="same intro animate__animated animate__fadeInRight">
@@ -138,7 +143,8 @@
                     </div>
                     <div class="box">
                         <img src="{% static 'images\github-logo.png' %}" alt="">
-                        <p>Food Resturant Website</p>
+                        
+                        <a href="https://kiki-food.vercel.app/"><p>Food Resturant Website</p></a>
                     </div>
                 </div>
                     <div class="button">
@@ -256,7 +262,7 @@
             
 
             can.addEventListener('click', () =>{
-                nav.style.display = 'none';
+                nav.style.display = 'flex';
                 ham.style.display = 'none';
             })
         }

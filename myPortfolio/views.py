@@ -3,6 +3,7 @@ from .forms import MessageForm
 from django.core.mail import send_mail, EmailMessage
 from django.conf import settings
 from .models import Education,Skills,Service,Porfolio
+from django.contrib import messages
 
 # Create your views here.
 
@@ -30,10 +31,12 @@ def send_message(request):
             form.save()
             mail = form.cleaned_data['email']
             message = form.cleaned_data['message']
-            content = message + '\n' + mail 
-            #             from_mail = mail ]
-            # message = form.cleaned_data['message']
-            send_mail(f'New message from {mail} on your website', content, mail, [settings.EMAIL_HOST_USER])
+            content = f"{message}'\n' from: {mail}" 
+            send_mail(f'New message from {mail} on your website', content, mail, [settings.EMAIL_HOST_USER], fail_silently=True)
+            messages.success(request, 'Message Sent')
+            return redirect('port')
+        else:
+            messages.error(request, 'Error sending message')
             return redirect('port')
     else:
         form = MessageForm()
