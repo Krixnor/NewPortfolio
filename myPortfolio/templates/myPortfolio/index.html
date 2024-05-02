@@ -42,22 +42,23 @@
 
             <ul id="ul">
                 <div class="hamburger" id="hamburger" onclick="drop()">
-                    <i class="fa-solid fa-bars"></i>
+                    <i class="fa-solid fa-bars">iii</i>
                 </div>
             </ul>
 
             <ul id="cancel">
-                <li> <a href=""><i class="fa-solid fa-xmark"></i></a> </li>
+                <!-- <li> <a href=""><i class="fa-solid fa-xmark">x</i></a> </li> -->
+                  <li onclick="toggleMenu()"><i class="fa-solid fa-xmark">x</i></li>
             </ul>
         </nav>
 </header>
 
-        {% if message %}
-        {% for message in messages %}
+{% if messages %}
+{% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+{% endfor %}
+{% endif %}
 
-        {% endfor %}
-        <div>{{ message }}</div>
-        {% endif %}
     <div id="hero">
         <div class="content">
             <div class="same intro animate__animated animate__fadeInRight">
@@ -261,11 +262,35 @@
             })
             
 
-            can.addEventListener('click', () =>{
-                nav.style.display = 'flex';
-                ham.style.display = 'none';
-            })
+            // can.addEventListener('click', (e) =>{
+                
+            //     nav.style.display = 'flex';
+            //     ham.style.display = 'none';
+            //     e.preventDefault()
+            // })
         }
+        function toggleMenu() {
+            // event.preventDefault();
+            const nav = document.querySelector('nav')
+            const ham = document.querySelector('#hamburger');
+            const links = document.querySelector('#link');
+            const cancel = document.querySelector('#cancel');
+
+            // Toggle visibility of hamburger menu and cancel button
+            if (ham.style.display === 'none') {
+                ham.style.display = 'block';
+                links.style.display = 'none';
+                cancel.style.display = 'none';
+                nav.style.display = 'flex';
+                nav.style.justifyContent = 'space-between';
+                nav.style.textAlign = 'start';
+            } else {
+                ham.style.display = 'none';
+                links.style.display = 'flex'; // Change display to flex to maintain layout
+                cancel.style.display = 'block';
+            }
+}
+
     </script>
 </body>
 </html>

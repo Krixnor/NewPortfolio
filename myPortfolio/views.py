@@ -31,9 +31,23 @@ def send_message(request):
             form.save()
             mail = form.cleaned_data['email']
             message = form.cleaned_data['message']
-            content = f"{message}'\n' from: {mail}" 
-            send_mail(f'New message from {mail} on your website', content, mail, [settings.EMAIL_HOST_USER], fail_silently=True)
-            messages.success(request, 'Message Sent')
+            content = f"{message}\nfrom: {mail}"
+            
+            # Create an EmailMessage object
+            email = EmailMessage(
+                subject=f'New message from {mail} on your website',
+                body=content,
+                from_email=mail,
+                to=['udodorchristabel@gmail.com'],
+            )
+            
+            # Attempt to send the email
+            try:
+                email.send()
+                messages.success(request, 'Message Sent')
+            except Exception as e:
+                messages.error(request, f'Error sending message')
+
             return redirect('port')
         else:
             messages.error(request, 'Error sending message')

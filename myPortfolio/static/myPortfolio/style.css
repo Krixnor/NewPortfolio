@@ -87,6 +87,12 @@ a:hover{
     
 }
 
+.alert{
+    background-color: teal;
+    color: #eee;
+    padding: 1rem;
+}
+
 h1{
     
     font-size: 3rem;
@@ -449,6 +455,10 @@ h3{
     }
 
     #contact .container{
+        display: block;
+    }
+
+    .links{
         display: block;
     }
 }
